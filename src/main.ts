@@ -64,7 +64,10 @@ async function bootstrap() {
 
 async function startMicroservices(app: NestExpressApplication, logger: Logger) {
   try {
-    app.connectMicroservice(accpuntingSvcConfig);
+    app.connectMicroservice({
+      transport: Transport.RMQ,
+      options: accpuntingSvcConfig,
+    });
     await app.startAllMicroservices();
     logger.log('Microservices started successfully');
   } catch (error) {
