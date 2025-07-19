@@ -7,7 +7,7 @@ import * as bodyParser from 'body-parser';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { Transport } from '@nestjs/microservices';
 import { useContainer } from 'class-validator';
-import { accpuntingSvcConfig } from './config/ms.config';
+import { accountingSvcConfig } from './config/ms.config';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
@@ -66,7 +66,7 @@ async function startMicroservices(app: NestExpressApplication, logger: Logger) {
   try {
     app.connectMicroservice({
       transport: Transport.RMQ,
-      options: accpuntingSvcConfig,
+      options: accountingSvcConfig,
     });
     await app.startAllMicroservices();
     logger.log('Microservices started successfully');
