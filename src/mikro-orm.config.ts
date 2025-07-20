@@ -3,6 +3,8 @@ import { ConfigService } from '@nestjs/config';
 import { PostgreSqlDriver } from '@mikro-orm/postgresql';
 import { TsMorphMetadataProvider } from '@mikro-orm/reflection';
 import { Migrator } from '@mikro-orm/migrations';
+import { SeedManager } from '@mikro-orm/seeder';
+import { EntityGenerator } from '@mikro-orm/entity-generator';
 
 const configService = new ConfigService();
 
@@ -17,11 +19,15 @@ export default defineConfig({
   entitiesTs: ['src/**/*.entity.ts'],
   debug: true,
   metadataProvider: TsMorphMetadataProvider,
-  extensions: [Migrator],
+  extensions: [Migrator, EntityGenerator, SeedManager],
   migrations: {
     path: 'dist/migrations',
     pathTs: 'src/migrations',
     glob: '!(*.d).{js,ts}',
   },
-  //extensions: [Migrator, EntityGenerator, SeedManager],
+  seeder: {
+    path: 'dist/seeders',
+    pathTs: 'src/seeders',
+    glob: '!(*.d).{js,ts}',
+  },
 });
