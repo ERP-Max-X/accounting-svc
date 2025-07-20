@@ -1,3 +1,5 @@
+import * as process from 'node:process';
+
 export const DEFAULT = {
-  PASS: `Secret123!!`,
+  PASS: process.env.DEFAULT_PASS,
 };
