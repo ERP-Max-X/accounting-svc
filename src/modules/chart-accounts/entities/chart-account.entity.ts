@@ -6,6 +6,7 @@ import {
   OneToMany,
   Property,
 } from '@mikro-orm/core';
+import { ChartAccountTranslationEntity } from '@/modules/chart-accounts/entities/chart-account-translation.entity';
 
 @Entity({ tableName: 'chart_accounts' })
 export class ChartAccountEntity extends BasedEntity {
@@ -23,4 +24,7 @@ export class ChartAccountEntity extends BasedEntity {
 
   @Property()
   updater?: number;
+
+  @OneToMany(() => ChartAccountTranslationEntity, (t) => t.chartAccount, {})
+  translations = new Collection<ChartAccountTranslationEntity>(this);
 }
