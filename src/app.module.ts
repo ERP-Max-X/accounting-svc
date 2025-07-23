@@ -15,7 +15,7 @@ import { OutgoingsModule } from './modules/documents/outgoings/outgoings.module'
 import { MovementsModule } from './modules/documents/movements/movements.module';
 import { WriteoffsModule } from './modules/documents/writeoffs/writeoffs.module';
 import { JournalsModule } from './modules/accounting/journals/journals.module';
-import { ChatrAccountsUaModule } from './modules/accounting/chatr-accounts-ua/chatr-accounts-ua.module';
+import { ChartAccountsUaModule } from './modules/accounting/chart-accounts-ua/chart-accounts-ua.module';
 
 @Module({
   imports: [
@@ -33,7 +33,7 @@ import { ChatrAccountsUaModule } from './modules/accounting/chatr-accounts-ua/ch
     WriteoffsModule,
     JournalsModule,
     ChartAccountsModule,
-    ChatrAccountsUaModule,
+    ChartAccountsUaModule,
   ],
   controllers: [AppController],
   providers: [AppService],
