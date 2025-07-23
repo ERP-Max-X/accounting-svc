@@ -1,5 +1,5 @@
 import { Entity, ManyToOne, PrimaryKey, Property } from '@mikro-orm/core';
-import { ChartAccountEntity } from '@/modules/chart-accounts/entities/chart-account.entity';
+import { ChartAccountEntity } from '@/modules/accounting/chart-accounts/entities/chart-account.entity';
 
 @Entity({ tableName: 'chart_account_translations' })
 export class ChartAccountTranslationEntity {

@@ -1,7 +1,7 @@
 import type { EntityManager } from '@mikro-orm/core';
 import { Seeder } from '@mikro-orm/seeder';
-import { ChartAccountEntity } from '@/modules/chart-accounts/entities/chart-account.entity';
-import { ChartAccountTranslationEntity } from '@/modules/chart-accounts/entities/chart-account-translation.entity';
+import { ChartAccountEntity } from '@/modules/accounting/chart-accounts/entities/chart-account.entity';
+import { ChartAccountTranslationEntity } from '@/modules/accounting/chart-accounts/entities/chart-account-translation.entity';
 
 export class ChartAccountSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
